@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Singularity CRI User Documentation'
-copyright = u'2019, Sylabs'
+copyright = u'2017-2019, Sylabs'
 author = u'Sylabs'
 
 # The short X.Y version
@@ -74,18 +74,36 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'sticky_navigation': True,
+    'includehidden': True,
+    'navigation_depth': 5,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': True,
+}
+
+html_context = {
+    'display_github': True,
+    'github_user': 'sylabs',
+    'github_repo': 'singularity-cri-userdocs',
+    'github_version': 'master',
+    'conf_py_path': '/',
+}
+
+html_logo = 'logo.png'
+
+html_favicon = 'favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['html/_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -95,13 +113,13 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
-
-
+html_sidebars = {
+    '**': ['versions.html']
+}
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SingularityCRIUserDocumentationdoc'
+htmlhelp_basename = 'ReadtheDocsTemplatedoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -128,11 +146,11 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SingularityCRIUserDocumentation.tex', u'Singularity CRI User Documentation Documentation',
+    (master_doc, 'ReadtheDocsTemplate.tex', u'Singularity CRI User Documentation Documentation',
      u'Sylabs', 'manual'),
 ]
 
-
+latex_logo = 'logo.png'
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -142,7 +160,7 @@ man_pages = [
      [author], 1)
 ]
 
-
+man_show_urls = True
 # -- Options for Texinfo output ----------------------------------------------
 
 # Grouping the document tree into Texinfo files. List of tuples
@@ -158,7 +176,7 @@ texinfo_documents = [
 # -- Options for Epub output -------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = project
+epub_title = 'Singularity CRI User Documentation v.'+ version
 epub_author = author
 epub_publisher = author
 epub_copyright = copyright
@@ -166,11 +184,20 @@ epub_copyright = copyright
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.
 #
-# epub_identifier = ''
+epub_identifier = 'https://github.com/sylabs/singularity-cri-userdocs'
+epub_scheme = 'URL'
+epub_uid = epub_title
+epub_exclude_files = []
 
 # A unique identification for the text.
 #
 # epub_uid = ''
 
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ['search.html']
+# -- Custom lexer ---------------------------------------------------------
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '.'))
+from sphinx.highlighting import lexers
+from pygments_singularity import SingularityLexer
+
+# lexer for Singularity definition files (added here until it is upstreamed into Pygments).
+lexers['singularity'] = SingularityLexer(startinline=True)
