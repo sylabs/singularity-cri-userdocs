@@ -182,7 +182,7 @@ the following will be enough:
 .. code-block:: bash
 
     $ cat > /etc/default/kubelet <<EOF
-		KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=/var/run/singularity.sock --image-service-endpoint=/var/run/singularity.sock --fail-swap-on=false
+		KUBELET_EXTRA_ARGS=--container-runtime=remote --container-runtime-endpoint=/var/run/singularity.sock --image-service-endpoint=/var/run/singularity.sock
 	  EOF
 
 If you have changed ``listenSocket`` make sure you pass it to kubelet as well.
