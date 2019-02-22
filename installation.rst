@@ -158,6 +158,7 @@ To verify Singularity CRI is running do the following:
 You should see the following output:
 
 .. code-block:: text
+
 	● sycri.service - Singularity CRI
 	   Loaded: loaded (/etc/systemd/system/sycri.service; enabled; vendor preset: enabled)
 	   Active: active (running) since Fri 2019-02-22 15:59:02 UTC; 2min 54s ago
@@ -191,14 +192,15 @@ Restart kubelet service
 -----------------------
 
 .. code-block:: bash
+
 	$ sudo systemctl restart kubelet
 
 
 .. _remove-an-old-version:
 
-=====================
+---------------------
 Remove an old version
-=====================
+---------------------
 
 When you run ``sudo make install``, the command lists files as they are
 installed. They must all be removed in order to completely remove Singularity CRI.
