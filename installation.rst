@@ -18,8 +18,8 @@ If you are looking for trying Singularity CRI locally, follow :ref:`local testin
 Overview
 --------
 
-Singularity CRI in nothing more than Singularity-specific implementation of `Kubernetes CRI
-<https://github.com/kubernetes/community/blob/master/contributors/devel/container-runtime-interface.md>`_.
+Singularity CRI is nothing more than Singularity-specific implementation of `Kubernetes CRI
+<https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md>`_.
 It is currently under development and passes 70/74 `validation tests
 <https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/validation.md>`_.
 Detailed report can be found
