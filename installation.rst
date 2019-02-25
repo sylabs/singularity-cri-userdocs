@@ -196,6 +196,9 @@ Restart kubelet service
 	$ sudo systemctl restart kubelet
 
 
+That's it! After you completed those steps for each node, consider your cluster configured
+to use Singularity as a container runtime. For examples refer to :ref:`basic usage section <basic_usage>`.
+
 .. _remove-an-old-version:
 
 ---------------------
