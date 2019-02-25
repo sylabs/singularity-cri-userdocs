@@ -5,6 +5,7 @@ Singularity CRI User Guide
 .. toctree::
    :maxdepth: 5
 
-   Installation <installation>
-   Basic Usage <basic_usage>
-   Examples <examples>
+	Installation <installation>
+	Usage <basic_usage>
+	Comparing with others <comparison>
+	Sykube <sykube>
