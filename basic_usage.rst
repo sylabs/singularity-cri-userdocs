@@ -76,4 +76,4 @@ To verify objects are indeed created you can do:
 	$ kubectl get deploy
 	$ kubectl get svc
 
-If everything is file you should be able to access file server.
+If everything is file you should be able to access the file server via NodePort service.
