@@ -46,6 +46,35 @@ To create new Sykube cluster do the following:
 	$ sykube init
 
 
+.. warning::
+	Make sure you don't have any restrictions applied to iptables `FORWARD` target. To check this
+	do the following:
+
+	.. code-block:: bash
+
+		$ sudo iptables -nL
+		Chain FORWARD (policy DROP)
+		target     prot opt source               destination
+		DOCKER-USER  all  --  0.0.0.0/0            0.0.0.0/0
+		DOCKER-ISOLATION-STAGE-1  all  --  0.0.0.0/0            0.0.0.0/0
+		ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED
+		DOCKER     all  --  0.0.0.0/0            0.0.0.0/0
+		ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+		ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+
+	Problems are often caused by Docker daemon since it adds custom	iptables rules.
+	That prevents Sykube instance network from being correctly setup.
+
+	To disable docker and reboot you should do the following:
+
+	.. code-block:: bash
+
+		$ sudo service docker stop && sudo systemctl disable docker && reboot
+
+	After that Sykube should work correctly. Note this workaround may be redundant soon as
+	there is an open GitHub issue referencing it `here <https://github.com/containernetworking/plugins/pull/75>`_.
+
+
 This may take a few minutes, stay patient.
 
 After that if you already have `kubectl <https://kubernetes.io/docs/tasks/tools/install-kubectl/>`_ installed, you
