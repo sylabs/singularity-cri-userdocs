@@ -66,17 +66,18 @@ to install it. The ``master`` branch changes quickly and may be unstable.
 Download Singularity CRI repo
 =================================
 
-Since Singularity-CRI is now build with `go modules <https://github.com/golang/go/wiki/Modules>`_
-there in no need to create standard `go workspace <https://golang.org/doc/code.html>`_. If you still
-prefer keeping source code under $GOPATH make sure GO111MODULE is set.
+Since Singularity-CRI is now built with `go modules <https://github.com/golang/go/wiki/Modules>`_
+there is no need to create standard `go workspace <https://golang.org/doc/code.html>`_. If you still
+prefer keeping source code under ``$GOPATH`` make sure ``GO111MODULE`` is set.
 
-The following assumes you want to set up Singularity CRI outside $GOPATH.
+The following assumes you want to set up Singularity CRI outside ``$GOPATH``.
 To set up project do the following:
 
 .. code-block:: bash
 
     $ git clone https://github.com/sylabs/singularity-cri.git && \
 	cd singularity-cri && \
+	git checkout tags/v1.0.0-alpha.2 -b v1.0.0-alpha.2 && \
 	make dep
 
 
