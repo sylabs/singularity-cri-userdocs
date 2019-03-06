@@ -45,9 +45,8 @@ Install Dependencies
 
 1) Install `git <https://git-scm.com/downloads>`_
 2) Install `Singularity 3.1+ <https://www.sylabs.io/guides/3.0/user-guide/installation.html>`_ with OCI support
-3) Install `Go 1.10+ <https://golang.org/doc/install>`_
-4) Install `dep tool <https://golang.github.io/dep/docs/installation.html>`_
-5) Install socat, e.g
+3) Install `Go 1.11+ <https://golang.org/doc/install>`_
+4) Install socat, e.g
 
 .. code-block:: bash
 
@@ -67,26 +66,29 @@ to install it. The ``master`` branch changes quickly and may be unstable.
 Download Singularity CRI repo
 =================================
 
-To ensure that the Singularity CRI source code is downloaded to the appropriate
-directory use these commands.
+Since Singularity-CRI is now built with `go modules <https://github.com/golang/go/wiki/Modules>`_
+there is no need to create standard `go workspace <https://golang.org/doc/code.html>`_. If you still
+prefer keeping source code under ``$GOPATH`` make sure ``GO111MODULE`` is set.
+
+The following assumes you want to set up Singularity CRI outside ``$GOPATH``.
+To set up project do the following:
 
 .. code-block:: bash
 
-    $ go get -d github.com/sylabs/singularity-cri
-
-Go will complain that there are no Go files, but it will still  download the
-Singularity CRI source code to the appropriate directory within the ``$GOPATH``.
+    $ git clone https://github.com/sylabs/singularity-cri.git && \
+	cd singularity-cri && \
+	git checkout tags/v1.0.0-alpha.2 -b v1.0.0-alpha.2 && \
+	make dep
 
 
 Build and install Singularity CRI
 =================================
 
+Assuming you are in repository root directory:
+
 .. code-block:: bash
 
-	$ .cd $GOPATH/github.com/sylabs/singularity-cri && \
-		make && \
-		sudo make install
-
+	$ make && sudo make install
 
 After this command Singularity CRI will be installed in the ``/usr/local`` directory hierarchy.
 
