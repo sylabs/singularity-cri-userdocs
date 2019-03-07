@@ -161,7 +161,7 @@ You should see the following output:
 
 .. code-block:: text
 
-	● sycri.service - Singularity CRI
+	* sycri.service - Singularity CRI
 	   Loaded: loaded (/etc/systemd/system/sycri.service; enabled; vendor preset: enabled)
 	   Active: active (running) since Fri 2019-02-22 15:59:02 UTC; 2min 54s ago
 	 Main PID: 31927 (sycri)

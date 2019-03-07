@@ -147,7 +147,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'ReadtheDocsTemplate.tex', u'Singularity CRI User Documentation Documentation',
+    (master_doc, 'ReadtheDocsTemplate.tex', u'Singularity CRI User Documentation',
      u'Sylabs', 'manual'),
 ]
 
@@ -157,7 +157,7 @@ latex_logo = 'logo.png'
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'singularitycriuserdocumentation', u'Singularity CRI User Documentation Documentation',
+    (master_doc, 'singularitycriuserdocumentation', u'Singularity CRI User Documentation',
      [author], 1)
 ]
 
@@ -168,7 +168,7 @@ man_show_urls = True
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SingularityCRIUserDocumentation', u'Singularity CRI User Documentation Documentation',
+    (master_doc, 'SingularityCRIUserDocumentation', u'Singularity CRI User Documentation',
      author, 'SingularityCRIUserDocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
