@@ -16,3 +16,8 @@ lots of security leaks.
 Secondly, Singularity CRI makes use of SIF images, which allows you to use all SIF benefits out of the box.
 For instance, Singularity CRI will automatically check SIF signatures upon pulling an image. Also all pulled
 images that are not in SIF format will be automatically converted to SIF.
+
+Last, but not least, Singularity is aimed at compute, that is why Singularity-CRI has built-in NVIDIA
+GPU support. With it, your Kubernetes cluster won't need any additional tuning to use GPUs.
+You use Kubernetes as usual and Singularity-CRI handles the rest.
+
