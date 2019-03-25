@@ -37,9 +37,6 @@ YAML configuration that we will be using is the following:
 	      containers:
 	      - name: image-server
 	        image: cloud.sylabs.io/sashayakovtseva/test/image-server
-	        imagePullPolicy: IfNotPresent
-	        command: ["./image-server"]
-	        workingDir: "/go/bin"
 	        ports:
 	        - containerPort: 8080
 	---
