@@ -16,42 +16,8 @@ Hello, cats!
 Here we will walk through a basic k8s example with SIF. We will deploy http file server
 that listens on port 8080 and create a k8s service to make it public on port 80.
 
-YAML configuration that we will be using is the following:
-
-.. code-block:: yaml
-
-	apiVersion: extensions/v1beta1
-	kind: Deployment
-	metadata:
-	  name: image-service-deployment
-	  namespace: default
-	spec:
-	  replicas: 1
-	  template:
-	    metadata:
-	      labels:
-	    	app: image-service
-	      name: image-service
-	      namespace: default
-	    spec:
-	      containers:
-	      - name: image-server
-	        image: cloud.sylabs.io/sashayakovtseva/test/image-server
-	        ports:
-	        - containerPort: 8080
-	---
-	apiVersion: v1
-	kind: Service
-	metadata:
-	  name: image-service
-	spec:
-	  type: NodePort
-	  ports:
-	    - port: 80
-	      targetPort: 8080
-	  selector:
-	    app: image-service
-
+YAML configuration that we will be using is located
+`here <https://github.com/sylabs/singularity-cri/blob/master/examples/k8s/image-service.yaml>`_.
 
 .. note::
 	To make Singularity CRI pull image from `cloud library <https://cloud.sylabs.io/library>`_ an explicit
@@ -74,3 +40,42 @@ To verify objects are indeed created you can do:
 	$ kubectl get svc
 
 If everything is fine you should be able to access the file server via NodePort service.
+
+----------------------------------
+Image recognition using NVIDIA GPU
+----------------------------------
+
+Here we will image recognition app that uses NVIDIA GPU.
+
+.. image:: darkflow.png
+
+
+YAML configuration that we will be using is located
+`here <https://github.com/sylabs/singularity-cri/blob/master/examples/k8s/gpu/darkflow.yaml>`_.
+
+To create a deployment and a service run the following:
+
+.. code-block:: bash
+
+	$ kubectl apply -f darkflow.yaml
+	configmap/web-config created
+	deployment.extensions/darkflow created
+	deployment.extensions/darkflow-front created
+	deployment.extensions/darkflow-web created
+	service/darkflow created
+	service/darkflow-front created
+	service/darkflow-web created
+
+To verify objects are indeed created you can do:
+
+.. code-block:: bash
+
+	$ kubectl get deploy
+	$ kubectl get svc
+
+If everything is fine you should be able to access Darkflow UI that is exposed with darkflow-web service.
+
+.. note::
+	You may need to change serverURL value in config map from the example above according to
+	your cluster configuration. Also you can change `input` and `output` directories
+	location on your host.
