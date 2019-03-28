@@ -130,25 +130,39 @@ To create the systemd service do the following:
 
 .. code-block:: bash
 
+	$ sudo -s
 	$ cat > /etc/systemd/system/sycri.service <<EOF
-		[Unit]
-		Description=Singularity CRI
-		After=network.target
-		StartLimitIntervalSec=0
+	[Unit]
+	Description=Singularity CRI
+	After=network.target
+	StartLimitIntervalSec=0
+
+	[Service]
+	Type=simple
+	Restart=always
+	RestartSec=1
+	ExecStart=/usr/local/bin/sycri -v 10
+	Environment="PATH=/usr/local/libexec/singularity/bin:/bin:/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
+
+	[Install]
+	WantedBy=multi-user.target
+	EOF
+
+	$ systemctl enable sycri && \
+	  systemctl start sycri
+
+
+.. note::
+	Latest Singularity plugin system is not stable and leads to panic when no HOME and GOPATH
+	environments are set. There is an `open issue <https://github.com/sylabs/singularity/issues/3163>`_
+	related to this problem, so until it is open you may need to add the following line to
+	Singularity-CRI service definition:
+
+	.. code-block:: bash
 
 		[Service]
-		Type=simple
-		Restart=always
-		RestartSec=1
-		ExecStart=/usr/local/bin/sycri -v 10
-		Environment="PATH=/usr/local/libexec/singularity/bin:/bin:/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
-
-		[Install]
-		WantedBy=multi-user.target
-	  EOF
-
-	$ sudo systemctl enable sycri && \
-	  sudo systemctl start sycri
+		...
+		Environment="GOPATH=/home/<your-name>/go"
 
 
 To verify Singularity CRI is running do the following:
