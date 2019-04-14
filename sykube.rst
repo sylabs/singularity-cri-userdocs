@@ -7,7 +7,7 @@ Sykube
 Imagine that you want to test your k8s cluster with Singularity CRI locally, but don't want to waste
 time setting is all up or messing with Minikube.
 
-*Sykube* comes to the rescue! Inspired by `Minikube <https://kubernetes.io/docs/setup/minikube/)>`_, it allows
+*Sykube* comes to the rescue! Inspired by `Minikube <https://kubernetes.io/docs/setup/minikube/>`_, it allows
 you to run k8s cluster locally within **Singularity instances** with Singularity CRI baked in. Moreover, unlike
 Minikube, it is capable of spawning not only one, but arbitrary amount of nodes.
 
