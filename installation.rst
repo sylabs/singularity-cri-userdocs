@@ -8,7 +8,7 @@ Installation
 
 This document will guide you through the process of installing Singularity CRI on existing
 Kubernetes **v1.12+** cluster. If you don't have Kubernetes cluster already set up, please reference
-`official installation guide <https://kubernetes.io/docs/setup/pick-right-solution/#bare-metal>`_.
+`official installation guide <https://kubernetes.io/docs/setup/>`_.
 Further assumed Linux environment since it is the only operating system that can support containers because of
 kernel features like namespaces
 
