@@ -4,9 +4,9 @@
 Basic Usage
 ===========
 
-When Singularity CRI is installed and configured and kubelet is restarted,
+When Singularity-CRI is installed and configured and kubelet is restarted,
 you may use k8s as you usually do. Here we will show some basic k8s usage so you can
-verify your installation. Full list of examples can be found `in Singularity CRI repo
+verify your installation. Full list of examples can be found `in Singularity-CRI repo
 <https://github.com/sylabs/singularity-cri/tree/master/examples/k8s>`_.
 
 ------------
@@ -20,7 +20,7 @@ YAML configuration that we will be using is located
 `here <https://github.com/sylabs/singularity-cri/blob/master/examples/k8s/image-service.yaml>`_.
 
 .. note::
-	To make Singularity CRI pull image from `cloud library <https://cloud.sylabs.io/library>`_ an explicit
+	To make Singularity-CRI pull image from `cloud library <https://cloud.sylabs.io/library>`_ an explicit
 	**cloud.sylabs.io** prefix should be specified in image field.
 
 
@@ -47,11 +47,11 @@ Image recognition using NVIDIA GPU
 
 Here we will image recognition app that uses NVIDIA GPU.
 
-.. image:: darkflow.png
+.. image:: img/darkflow.png
 
 
 YAML configuration that we will be using is located
-`here <https://github.com/sylabs/singularity-cri/blob/master/examples/k8s/gpu/darkflow.yaml>`_.
+`here <https://github.com/sylabs/singularity-cri/blob/master/examples/k8s/darkflow.yaml>`_.
 
 To create a deployment and a service run the following:
 

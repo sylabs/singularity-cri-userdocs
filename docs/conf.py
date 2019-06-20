@@ -97,9 +97,9 @@ html_context = {
     'conf_py_path': '/',
 }
 
-html_logo = 'logo.png'
+html_logo = 'img/logo.png'
 
-html_favicon = 'favicon.png'
+html_favicon = 'img/favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -151,7 +151,7 @@ latex_documents = [
      u'Sylabs', 'manual'),
 ]
 
-latex_logo = 'logo.png'
+latex_logo = 'img/logo.png'
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
