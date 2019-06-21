@@ -70,8 +70,8 @@ To create new Sykube cluster do the following:
 
 This may take a few minutes, stay patient.
 
-After that if you already have `kubectl <https://kubernetes.io/docs/tasks/tools/install-kubectl/>`_ installed, you
-may want to configure it to work with Sykube cluster. To do that run the following:
+After that if you already have `kubectl <https://kubernetes.io/docs/tasks/tools/install-kubectl/>`_ installed,
+you may want to configure it to work with Sykube cluster. To do that run the following:
 
 .. code-block:: bash
 
