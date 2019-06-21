@@ -33,11 +33,11 @@ will also need to install some dependencies as described below.
 Install Dependencies
 --------------------
 
-1) Install `git <https://git-scm.com/downloads>`_
-2) Install `Singularity 3.1+ <https://www.sylabs.io/guides/3.0/user-guide/installation.html>`_ with OCI support
-3) Install `Go 1.11+ <https://golang.org/doc/install>`_
-4) Install `inotify <http://man7.org/linux/man-pages/man7/inotify.7.html>`_ to enable GPU device plugin
-5) Install socat if you want to enable fort-forwarding, e.g
+#. Install `git <https://git-scm.com/downloads>`_
+#. Install `Singularity 3.1+ <https://www.sylabs.io/guides/3.0/user-guide/installation.html>`_ with OCI support
+#. Install `Go 1.11+ <https://golang.org/doc/install>`_
+#. Install `inotify <http://man7.org/linux/man-pages/man7/inotify.7.html>`_ to enable GPU device plugin
+#. Install `socat` if you want to enable fort-forwarding, e.g
 
 .. code-block:: bash
 
@@ -90,9 +90,10 @@ for additional details.
 Remove an old version
 ---------------------
 
-When you run ``sudo make install``, the command lists files as they are
-installed. They must be removed in order to completely remove Singularity-CRI from your host.
-For convenience we created uninstall command, so you can run the following to cleanup installation:
+When you run ``install``, the command lists files as they are installed. They must be removed in
+order to completely remove Singularity-CRI from your host.
+
+For convenience we created ``uninstall`` command, so you can run the following to cleanup installation:
 
 .. code-block:: bash
 

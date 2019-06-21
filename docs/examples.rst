@@ -1,4 +1,4 @@
-.. _basic_usage:
+.. _examples:
 
 ========
 Examples
@@ -52,9 +52,10 @@ To verify objects are indeed created you can do:
 	kubectl get deploy && \
 	kubectl get svc
 
-If everything is fine you should be able to access the cats server through just created Kubernetes service.
-There are couple URLs that where created for testing purposes, ``/cats/good`` is the one with cats.
-Don't question namings :)
+If everything is fine you should be able to access the cats server through the
+`Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_. that has
+just been created. There are couple URLs that where created for testing purposes,
+``/cats/good`` is the one with cats. Don't question namings 🙃
 
 
 ------------------
@@ -138,14 +139,14 @@ To create a deployment and a service run the following:
 
 	kubectl apply -f darkflow.yaml
 
-To verify objects are indeed created you can do:
+To verify that objects are indeed created you can do:
 
 .. code-block:: bash
 
 	kubectl get deploy && \
 	kubectl get svc
 
-If everything is fine you should be able to access Darkflow UI that is exposed with darkflow-web
+If everything is fine you should be able to access Darkflow UI that is exposed with `darkflow-web`
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_.
 
 .. note::

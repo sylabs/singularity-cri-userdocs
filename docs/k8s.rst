@@ -16,9 +16,9 @@ In that case only dedicated Kubernetes nodes should be integrated, and no change
 
 To make Kubernetes work with Singularity-CRI a couple of steps are needed:
 
-1) create Singularity-CRI service
-2) modify kubelet config
-3) restart kubelet with new config
+#. create Singularity-CRI service
+#. modify kubelet config
+#. restart kubelet with new config
 
 Create Singularity-CRI service
 ------------------------------
@@ -55,7 +55,8 @@ Enable and start service afterwards:
 	of that if you wish, refer to :ref:`configuration section <configuration>`.
 
 .. note::
-	Latest Singularity plugin system is not stable and leads to panic when no HOME and GOPATH
+
+	Latest Singularity plugin system is not stable and leads to panic when no ``HOME`` and ``GOPATH``
 	environments are set. There is an `open issue <https://github.com/sylabs/singularity/issues/3163>`_
 	related to this problem, so until it is open you may need to add the following line to
 	Singularity-CRI service definition:
@@ -92,13 +93,15 @@ You should see the following output:
 	Jun 20 16:01:39 ubuntu-bionic sycri[1989]: E0620 16:01:39.096779    1989 device.go:99] Could not initialize NVML library: could not load NVML library
 	Jun 20 16:01:39 ubuntu-bionic sycri[1989]: W0620 16:01:39.097603    1989 main.go:209] GPU support is not enabled: unable to load: check libnvidia-ml.so.1 library and graphic drivers
 
-Optionally you may want to disable other runtime services, e.g. docker daemon.
+.. note::
+
+	We recommend disabling other runtime services, e.g. docker daemon.
 
 Modify kubelet config
 ---------------------
 
 Kubelet needs to be reconfigured so that it connects to Singularity-CRI.
-If you haven't change default config, the following will be enough:
+If you haven't changed default config, the following will be enough:
 
 .. code-block:: bash
 
@@ -121,7 +124,7 @@ Restart kubelet service
 
 
 That's it! After you completed those steps for a node, consider it configured
-to use Singularity as a container runtime. For examples refer to :ref:`basic usage section <basic_usage>`.
+to use Singularity as a container runtime. For examples refer to :ref:`examples section <examples>`.
 
 GPU device plugin
 -----------------

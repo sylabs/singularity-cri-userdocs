@@ -28,7 +28,7 @@ Setting up environment
 	timeout: 10
 	debug: false
 
-For details on all options available see `crictl install page
+For details on all available options see `crictl install page
 <https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md#install-crictl>`_.
 
 3. Build and launch Singularity-CRI server (optionally: :ref:`configure <configuration>`):
@@ -45,7 +45,7 @@ For details on all options available see `crictl install page
 Interact with Singularity-CRI
 -----------------------------
 
-We will walk through a basic examples of interaction with a running Singularity-CRI.
+We will walk through basic examples of interaction with Singularity-CRI running.
 Further assumed you are located in Singularity-CRI repository root.
 
 Running Nginx
@@ -84,8 +84,8 @@ Unlike pods, containers should be explicitly started after creation:
 	sudo crictl start <CONTAINER_ID>
 
 
-Verify nginx container is running by opening `localhost:80 <http://localhost:80>`_ in any browser.
-You should see nginx welcome page.
+Verify Nginx container is running by opening `localhost:80 <http://localhost:80>`_ in any browser.
+You should see the Nginx welcome page.
 
 
 Running info container
@@ -163,7 +163,7 @@ The expected output is something like the following:
 Cleanup examples
 ----------------
 
-The quickest way to cleanup is simply remove containing pods:
+The quickest way to cleanup is simply by removing containing pods:
 
 .. code-block:: bash
 
