@@ -52,7 +52,7 @@ Enable and start service afterwards:
 
 .. note::
 	Singularity-CRI service above uses default configuration and log level. You can modify both
-	of that if you wish, refer to :ref:`configuration section <configuration>`.
+	of them if you wish, refer to :ref:`configuration section <configuration>`.
 
 .. note::
 
