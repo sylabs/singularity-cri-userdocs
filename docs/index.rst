@@ -1,11 +1,14 @@
 ==========================
-Singularity CRI User Guide
+Singularity-CRI User Guide
 ==========================
 
 .. toctree::
    :maxdepth: 5
 
 	Installation <installation>
-	Usage <basic_usage>
+	Configuration <configuration>
+	Integrating with Kubernetes <k8s>
 	Comparing with others <comparison>
+	Examples <examples>
 	Sykube <sykube>
+	Local testing <local>
