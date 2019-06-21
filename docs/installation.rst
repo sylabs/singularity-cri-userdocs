@@ -41,7 +41,7 @@ Install Dependencies
 
 .. code-block:: bash
 
-    sudo apt-get install socat
+    $ sudo apt-get install socat
 
 --------------------
 Install from source
@@ -63,11 +63,11 @@ The following assumes you want set up Singularity-CRI outside ``GOPATH``.
 
 .. code-block:: bash
 
-	git clone https://github.com/sylabs/singularity-cri.git && \
-	cd singularity-cri && \
-	git checkout tags/v1.0.0-beta.2 -b v1.0.0-beta.2 && \
-	make && \
-	sudo make install
+	$ git clone https://github.com/sylabs/singularity-cri.git && \
+	  cd singularity-cri && \
+	  git checkout tags/v1.0.0-beta.2 -b v1.0.0-beta.2 && \
+	  make && \
+	  sudo make install
 
 After these commands Singularity-CRI will be installed in the ``/usr/local/bin`` directory.
 
@@ -97,4 +97,4 @@ For convenience we created ``uninstall`` command, so you can run the following t
 
 .. code-block:: bash
 
-    sudo make uninstall
+    $ sudo make uninstall

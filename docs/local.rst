@@ -14,10 +14,10 @@ Setting up environment
 
 .. code-block:: bash
 
-	VERSION="v1.12.0" && \
-	wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz && \
-	sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin && \
-	rm -f crictl-$VERSION-linux-amd64.tar.gz
+	$ VERSION="v1.12.0" && \
+	  wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz && \
+	  sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin && \
+	  rm -f crictl-$VERSION-linux-amd64.tar.gz
 
 2. Configure it work with Singularity-CRI. Create `/etc/crictl.yaml` config file and add the following:
 
@@ -35,10 +35,10 @@ For details on all available options see `crictl install page
 
 .. code-block:: bash
 
-	make clean && \
-	make && \
-	sudo make install && \
-	sudo sycri
+	$ make clean && \
+	  make && \
+	  sudo make install && \
+	  sudo sycri
 
 
 -----------------------------
@@ -55,33 +55,33 @@ Running Nginx
 
 .. code-block:: bash
 
-	sudo crictl runp examples/net-pod.json
+	$ sudo crictl runp examples/net-pod.json
 
 That will return you ID of a freshly created pod. You will also see it when listing all pods on host:
 
 .. code-block:: bash
 
-	sudo crictl pods
+	$ sudo crictl pods
 
 2. Create & start nginx container inside the just created pod:
 
 .. code-block:: bash
 
-	sudo crictl pull nginx && \
-	sudo crictl create <POD_ID> examples/nginx.json examples/net-pod.json
+	$ sudo crictl pull nginx && \
+	  sudo crictl create <POD_ID> examples/nginx.json examples/net-pod.json
 
 Here ``POD_ID`` is the ID of a pod you want your container to appear in. If everything is fine
 you will get ID of a created container. Also you will see container when listing all containers on host:
 
 .. code-block:: bash
 
-	sudo crictl ps -a
+	$ sudo crictl ps -a
 
 Unlike pods, containers should be explicitly started after creation:
 
 .. code-block:: bash
 
-	sudo crictl start <CONTAINER_ID>
+	$ sudo crictl start <CONTAINER_ID>
 
 
 Verify Nginx container is running by opening `localhost:80 <http://localhost:80>`_ in any browser.
@@ -95,21 +95,21 @@ Running info container
 
 .. code-block:: bash
 
-	sudo crictl runp examples/net-pod.json
+	$ sudo crictl runp examples/net-pod.json
 
 2. Create & start container that outputs some system info:
 
 .. code-block:: bash
 
-	sudo crictl pull cloud.sylabs.io/sashayakovtseva/test/test-info && \
-	sudo crictl create <POD_ID> examples/info-cont.json examples/net-pod.json && \
-	sudo crictl start <CONTAINER_ID>
+	$ sudo crictl pull cloud.sylabs.io/sashayakovtseva/test/test-info && \
+	  sudo crictl create <POD_ID> examples/info-cont.json examples/net-pod.json && \
+	  sudo crictl start <CONTAINER_ID>
 
 Verify container executed correctly by opening logs:
 
 .. code-block:: bash
 
-	sudo crictl logs <CONTAINER_ID>
+	$ sudo crictl logs <CONTAINER_ID>
 
 
 The expected output is something like the following:
@@ -167,5 +167,5 @@ The quickest way to cleanup is simply by removing containing pods:
 
 .. code-block:: bash
 
-	sudo crictl stopp <POD_ID> && \
-	sudo crictl rmp <POD_ID>
+	$ sudo crictl stopp <POD_ID> && \
+	  sudo crictl rmp <POD_ID>

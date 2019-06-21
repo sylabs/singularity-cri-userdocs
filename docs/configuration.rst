@@ -14,12 +14,12 @@ one can specify ``--config`` flag with path to the desired config file:
 
 .. code-block:: bash
 
-	sycri --config ~/my-config.yaml
+	$ sycri --config ~/my-config.yaml
 
 It is also possible to change logging level with ``-v`` flag.
 The higher the level, the more verbose logs you will see:
 
 .. code-block:: bash
 
-	sycri -v 10
+	$ sycri -v 10
 

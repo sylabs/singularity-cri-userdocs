@@ -20,7 +20,7 @@ This is a dummy HTTP server suitable to verify Kubernetes installation.
 
 .. code-block:: bash
 
-	kubectl apply -f examples/k8s/hello-kubernetes.yaml
+	$ kubectl apply -f examples/k8s/hello-kubernetes.yaml
 
 After pods are up you should be able to hit hello-kubernetes
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_
@@ -43,14 +43,14 @@ To create a deployment and a service run the following:
 
 .. code-block:: bash
 
-	kubectl apply -f examples/k8s/image-service.yaml
+	$ kubectl apply -f examples/k8s/image-service.yaml
 
 To verify objects are indeed created you can do:
 
 .. code-block:: bash
 
-	kubectl get deploy && \
-	kubectl get svc
+	$ kubectl get deploy && \
+	  kubectl get svc
 
 If everything is fine you should be able to access the cats server through the
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_. that has
@@ -67,8 +67,8 @@ Consists of two parts: MongoDB and a back-end application that provides API.
 
 .. code-block:: bash
 
-	kubectl apply -f mongo.yaml && \
-	kubectl apply -f bookshelf.yaml
+	$ kubectl apply -f mongo.yaml && \
+	  kubectl apply -f bookshelf.yaml
 
 After that you should be able to interact with bookshelf
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_.
@@ -137,14 +137,14 @@ To create a deployment and a service run the following:
 
 .. code-block:: bash
 
-	kubectl apply -f darkflow.yaml
+	$ kubectl apply -f darkflow.yaml
 
 To verify that objects are indeed created you can do:
 
 .. code-block:: bash
 
-	kubectl get deploy && \
-	kubectl get svc
+	$ kubectl get deploy && \
+	  kubectl get svc
 
 If everything is fine you should be able to access Darkflow UI that is exposed with `darkflow-web`
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_.

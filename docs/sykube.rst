@@ -24,14 +24,14 @@ Assuming you already have Singularity 3.1+ installed, do the following:
 
 .. code-block:: bash
 
-	sudo singularity run library://sykube
+	$ sudo singularity run library://sykube
 
 This with pull the Sykube image and add a binary in `/usr/local/bin`. To verify your installation
 you can check usage options with the following command:
 
 .. code-block:: bash
 
-	sykube -h
+	$ sykube -h
 
 ---------------------
 Running local cluster
@@ -42,7 +42,7 @@ To create new Sykube cluster do the following:
 
 .. code-block:: bash
 
-	sykube init
+	$ sykube init
 
 
 .. warning::
@@ -52,7 +52,7 @@ To create new Sykube cluster do the following:
 
 	.. code-block:: bash
 
-		sudo iptables -nL
+		$ sudo iptables -nL
 
 	Problems are often caused by Docker daemon since it adds custom	iptables rules.
 	That prevents Sykube instance network from being correctly setup.
@@ -61,9 +61,9 @@ To create new Sykube cluster do the following:
 
 	.. code-block:: bash
 
-		sudo service docker stop && \
-		sudo systemctl disable docker && \
-		reboot
+		$ sudo service docker stop && \
+		  sudo systemctl disable docker && \
+		  reboot
 
 	After that Sykube should work correctly. Note this workaround may be redundant soon as
 	there is an open GitHub issue referencing it `here <https://github.com/containernetworking/plugins/pull/75>`_.
@@ -76,13 +76,13 @@ you may want to configure it to work with Sykube cluster. To do that run the fol
 
 .. code-block:: bash
 
-	sykube config > ~/.kube/config
+	$ sykube config > ~/.kube/config
 
 If you don't have kubectl, you can use Sykube, e.g:
 
 .. code-block:: bash
 
-	sykube exec master kubectl <args>
+	$ sykube exec master kubectl <args>
 
 
 .. _clean-up:
@@ -95,6 +95,6 @@ After testing you may want to remove the cluster. To do that run the following:
 
 .. code-block:: bash
 
-	sykube stop && \
-	sykube delete
+	$ sykube stop && \
+	  sykube delete
 

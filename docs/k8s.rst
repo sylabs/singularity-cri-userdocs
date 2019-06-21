@@ -46,8 +46,8 @@ Enable and start service afterwards:
 
 .. code-block:: bash
 
-	sudo systemctl enable sycri && \
-	sudo systemctl start sycri
+	$ sudo systemctl enable sycri && \
+	  sudo systemctl start sycri
 
 
 .. note::
@@ -61,7 +61,7 @@ Enable and start service afterwards:
 	related to this problem, so until it is open you may need to add the following line to
 	Singularity-CRI service definition:
 
-	.. code-block:: bash
+	.. code-block:: text
 
 		[Service]
 		...
@@ -72,7 +72,7 @@ To verify Singularity-CRI is running do the following:
 
 .. code-block:: bash
 
-	sudo systemctl status sycri
+	$ sudo systemctl status sycri
 
 You should see the following output:
 
@@ -105,11 +105,11 @@ If you haven't changed default config, the following will be enough:
 
 .. code-block:: bash
 
-	cat > /etc/default/kubelet <<EOF
-	KUBELET_EXTRA_ARGS=--container-runtime=remote \
-	--container-runtime-endpoint=/var/run/singularity.sock \
-	--image-service-endpoint=/var/run/singularity.sock
-	EOF
+	$ cat > /etc/default/kubelet <<EOF
+	  KUBELET_EXTRA_ARGS=--container-runtime=remote \
+	  --container-runtime-endpoint=/var/run/singularity.sock \
+	  --image-service-endpoint=/var/run/singularity.sock
+	  EOF
 
 If you have changed ``listenSocket`` in Singularity-CRI configuration, make sure you pass that to kubelet
 instead of a default `/var/run/singularity.sock`.
@@ -120,7 +120,7 @@ Restart kubelet service
 
 .. code-block:: bash
 
-	sudo systemctl restart kubelet
+	$ sudo systemctl restart kubelet
 
 
 That's it! After you completed those steps for a node, consider it configured
