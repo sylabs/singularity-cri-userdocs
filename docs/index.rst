@@ -9,6 +9,6 @@ Singularity-CRI User Guide
 	Configuration <configuration>
 	Integrating with Kubernetes <k8s>
 	Comparing with others <comparison>
-	Usage <basic_usage>
+	Examples <examples>
 	Sykube <sykube>
 	Local testing <local>
