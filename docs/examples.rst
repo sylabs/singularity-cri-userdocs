@@ -55,7 +55,7 @@ To verify objects are indeed created you can do:
 If everything is fine you should be able to access the cats server through the
 `Kubernetes service <https://kubernetes.io/docs/concepts/services-networking/service>`_. that has
 just been created. There are couple URLs that where created for testing purposes,
-``/cats/good`` is the one with cats. Don't question namings 🙃
+``/cats/good`` is the one with cats.
 
 
 ------------------
