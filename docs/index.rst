@@ -6,6 +6,7 @@ Singularity-CRI User Guide
    :maxdepth: 5
 
 	Installation <installation>
+	Known issues and constraints <constraints>
 	Configuration <configuration>
 	Integrating with Kubernetes <k8s>
 	Comparing with others <comparison>

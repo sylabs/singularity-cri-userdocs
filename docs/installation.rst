@@ -73,17 +73,6 @@ After these commands Singularity-CRI will be installed in the ``/usr/local/bin``
 
 Refer to :ref:`configuration section <configuration>` to see how Singularity-CRI can be configured.
 
----------------
-Important notes
----------------
-
-Because images external to the Library are in a format other than SIF, when pulled they are converted to this native
-format for use by Singularity. Each time a SIF file is created through this conversion process a timestamp is
-automatically generated and captured as SIF metadata. Unfortunately, changes in the timestamp result in uniquely
-tagged images - even though the only difference is the timestamp in the SIF metadata. This matter has been classified
-as a known issue for documentation; refer to `issue <https://github.com/sylabs/singularity-cri/issues/15>`_
-for additional details.
-
 .. _remove-an-old-version:
 
 ---------------------
