@@ -58,8 +58,8 @@ Enable and start service afterwards:
 
 	Latest Singularity plugin system is not stable and leads to panic when no ``HOME`` and ``GOPATH``
 	environments are set. There is an `open issue <https://github.com/sylabs/singularity/issues/3163>`_
-	related to this problem, so until it is open you may need to add the following line to
-	Singularity-CRI service definition:
+	related to this problem, so until it is open or if you have a bugged version,
+	you may need to add the following line to Singularity-CRI service definition:
 
 	.. code-block:: text
 
@@ -107,8 +107,8 @@ If you haven't changed default config, the following will be enough:
 
 	$ cat > /etc/default/kubelet <<EOF
 	  KUBELET_EXTRA_ARGS=--container-runtime=remote \
-	  --container-runtime-endpoint=/var/run/singularity.sock \
-	  --image-service-endpoint=/var/run/singularity.sock
+	  --container-runtime-endpoint=unix:///var/run/singularity.sock \
+	  --image-service-endpoint=unix:///var/run/singularity.sock
 	  EOF
 
 If you have changed ``listenSocket`` in Singularity-CRI configuration, make sure you pass that to kubelet

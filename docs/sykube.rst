@@ -14,6 +14,8 @@ Minikube, it is capable of spawning not only one, but arbitrary amount of nodes.
 Another nice feature is *ephemeral* clusters. With this option on, Sykube will create local cluster
 on *tmpfs* making sure nothing is left after host reboot.
 
+For more info refer to `Sykube repo <https://github.com/sylabs/sykube>`_.
+
 .. image:: img/sykube-cluster.png
 
 ------------
@@ -97,4 +99,3 @@ After testing you may want to remove the cluster. To do that run the following:
 
 	$ sykube stop && \
 	  sykube delete
-

@@ -65,7 +65,7 @@ The following assumes you want set up Singularity-CRI outside ``GOPATH``.
 
 	$ git clone https://github.com/sylabs/singularity-cri.git && \
 	  cd singularity-cri && \
-	  git checkout tags/v1.0.0-beta.2 -b v1.0.0-beta.2 && \
+	  git checkout tags/v1.0.0-beta.3 -b v1.0.0-beta.3 && \
 	  make && \
 	  sudo make install
 

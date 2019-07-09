@@ -16,10 +16,12 @@ one can specify ``--config`` flag with path to the desired config file:
 
 	$ sycri --config ~/my-config.yaml
 
-It is also possible to change logging level with ``-v`` flag.
-The higher the level, the more verbose logs you will see:
+It is also possible to change logging level with ``-v`` flag. Singularity-CRI follows Kubernetes
+`logging convention <https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md>`_
+
+Additionally you may specify log level 6 to enable Singularity runtime debug logging:
 
 .. code-block:: bash
 
-	$ sycri -v 10
+	$ sycri -v 6
 
