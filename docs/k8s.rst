@@ -8,6 +8,9 @@ This document will guide you through the process of integrating Singularity-CRI 
 Kubernetes **v1.12+** cluster. If you don't have Kubernetes cluster already set up, please reference
 `official installation guide <https://kubernetes.io/docs/setup/>`_.
 
+Kubernetes cluster set up from scratch with Singularity-CRI can be found
+in wlm-operator repo's `vagrant scripts <https://github.com/sylabs/wlm-operator/tree/master/vagrant>`_.
+
 If you are looking for trying Singularity-CRI locally, follow :ref:`local testing guide with Sykube <sykube>`.
 
 To fully enable Singularity support in Kubernetes cluster, Singularity-CRI should be installed
