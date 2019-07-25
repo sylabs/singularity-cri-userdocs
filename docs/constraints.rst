@@ -20,9 +20,7 @@ for additional details.
 Using image from private registry
 ---------------------------------
 
-Unfortunately, it is not possible to use private Docker registry of Sylabs library when working with
-Singularity-CRI. This is an object to change soon, we are working with Kubernetes maintainers on
+Unfortunately, it is not possible to use on-prem Sylabs library or pull private SIF images when working with
+Singularity-CRI. However, this is expected to change soon as we work with Kubernetes maintainers on
 the `issue <https://github.com/kubernetes/kubernetes/issues/79803>`_. As a current workaround we suggest
-to configure each noe individually. For Docker registry you nay follow
-`this <https://kubernetes.io/docs/concepts/containers/images/#configuring-nodes-to-authenticate-to-a-private-registry>`_
-tutorial, and for Sylabs library some kind of proxy should be set up.
+to configure each node individually.
