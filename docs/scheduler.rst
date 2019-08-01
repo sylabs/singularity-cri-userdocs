@@ -61,7 +61,7 @@ Modify kube-scheduler pod:
 .. note::
 
 	`/etc/kubernetes/manifests/kube-scheduler.yaml` is the default location of
-	scheduler pod specification. If you changed that make sure to update the appropriate one.
+	scheduler pod specification. If you changed that, make sure to update to the appropriate one.
 
 Restart kube-scheduler pod
 ---------------------------
