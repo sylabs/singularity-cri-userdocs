@@ -68,7 +68,7 @@ Restart kube-scheduler pod
 
 By default, Kubernetes watches for any changes on
 `static pods <https://kubernetes.io/docs/tasks/administer-cluster/static-pod/>`_, and default scheduler is one of them.
-This means right after you updated kube-scheduler pod changes should automatically apply in some
+This means right after you updated kube-scheduler pod changes should automatically be applied in some
 reasonable amount of time. In the end you should see all system pods running without any issues:
 
 .. code-block:: bash
