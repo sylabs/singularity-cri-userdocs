@@ -4,7 +4,7 @@
 Extending Kubernetes Scheduler
 ==============================
 
-Since SIF images do not support multiarch builds its arch should be respected properly
+Since SIF images do not support multiarch builds, its arch should be respected properly
 when it comes to pod scheduling. There are two options to make sure your SIF-based pod is
 scheduled on the node with a matching architecture: using `nodeSelector` in pod spec
 or configuring arch-scheduler extender.
