@@ -33,7 +33,7 @@ Launch arch-scheduler pod:
 	  kubectl apply -f deploy/extender.yaml
 
 
-This will make arch-scheduler run on the same node where default Kubernetes scheduler is.
+This will make arch-scheduler run on the same node where default Kubernetes scheduler is located.
 Location of arch-scheduler is important since later Kubernetes scheduler will query it on localhost.
 
 Modify Kubernetes scheduler config
